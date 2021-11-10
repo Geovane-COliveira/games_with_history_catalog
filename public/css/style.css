@@ -17,7 +17,82 @@
 
 body {
   min-height: 100vh;
-  font-family: "Poppins", sans-serif;
   background: var(--background-dark);
   color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body,
+input,
+a,
+button,
+textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+modal-content {
+  width: 100%;
+  max-width: 576px;
+
+  background: var(--main);
+
+  padding: 3rem;
+  position: relative;
+  border-radius: 0.25rem;
+}
+
+modal-close {
+  position: absolute;
+  
+  right: 1.5rem;
+  top: 1.5rem;
+  font-size: 1.5rem;
+  border: 0;
+  
+  background: transparent;
+  transition: filter 0.2s;
+}
+
+modal-close:hover {
+  color: var(--primary-hover)
+}
+
+@media (max-width: 1080px) {
+  body {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 720px) {
+  body {
+    font-size: 87.5%;
+  }
 }
