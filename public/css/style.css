@@ -1,0 +1,23 @@
+:root {
+  --background-dark: #212121;
+  --background-light: #424242;
+  --primary: #512da8;
+  --primary-hover: #311b92;
+  --secondary: #ff6f00;
+  --secondary-hover: #ff8f00;
+  --text-light: #fafafa;
+  --text-dark: #1b1b1b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: var(--background-dark);
+  color: var(--text-light);
+}
