@@ -1,5 +1,5 @@
 :root {
-  --background-dark: #212121;
+  --background-dark: #181818;
   --background-light: #424242;
   --primary: #512da8;
   --primary-hover: #311b92;
@@ -7,6 +7,8 @@
   --secondary-hover: #ff8f00;
   --text-light: #fafafa;
   --text-dark: #1b1b1b;
+  --gradient-main: #0f0c29;
+  --gradient-secondary: #302b63;
 }
 
 * {
@@ -72,18 +74,99 @@ modal-content {
 
 modal-close {
   position: absolute;
-  
+
   right: 1.5rem;
   top: 1.5rem;
   font-size: 1.5rem;
   border: 0;
-  
+
   background: transparent;
   transition: filter 0.2s;
 }
 
 modal-close:hover {
-  color: var(--primary-hover)
+  color: var(--primary-hover);
+}
+
+header {
+  height: 10rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  box-shadow: 2px 2px 6px var(--gradient-main);
+}
+
+header h1 {
+  font-weight: 400;
+  color: var(--text-light);
+  text-shadow: 0 0 3px var(--gradient-main);
+  font-family: "Mochiy Pop P One", sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--secondary-hover);
+  text-shadow: 2px 2px 2px var(--gradient-main);
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  height: 0.2rem;
+  width: 40%;
+
+  border-radius: 4rem;
+
+  background: linear-gradient(
+    to right,
+    var(--secondary),
+    var(--secondary-hover)
+  );
+}
+
+header p {
+  margin-top: 1rem;
+}
+
+.controllers-container {
+  height: 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 1rem;
+  box-shadow: inset 0 2px 4px var(--gradient-main);
+
+  background: var(--secondary);
+}
+
+button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: var(--primary);
+  border: 2px solid var(--secondary-hover);
+
+  color: var(--text-light);
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: scale 0.2s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: scale(0.9, 0.9);
+}
+
+button img {
+  width: 2rem;
 }
 
 @media (max-width: 1080px) {
