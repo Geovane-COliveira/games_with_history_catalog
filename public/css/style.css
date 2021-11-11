@@ -119,12 +119,12 @@ button {
   font-size: 1rem;
   font-weight: 600;
 
-  transition: scale 0.2s;
+  transition: transform 0.2s;
 }
 
 button:hover {
   background: var(--primary-hover);
-  transform: scale(0.9, 0.9);
+  transform: scale(0.9);
 }
 
 button img {
@@ -146,12 +146,19 @@ button img {
 }
 
 .container{
-  height: fit-content;
-  
+  width: 280px;
+  height: 300px;
+  padding: 0.5rem;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+
+  border-radius: 1rem;
+
+  position: relative;
+  background: linear-gradient(45deg, var(--secondary), var(--secondary-hover));
 }
 
 .outsideCircle{
@@ -189,14 +196,43 @@ button img {
 }
 
 .container .card{
-  background: var(--secondary-hover);
-  border: 5px solid var(--primary-hover);
-  box-sizing: border-box;
+  background: var(--primary-hover);
+  border: 5px solid var(--primary);
+  
   border-radius: 20px;
+  
   width: fit-content;
-  height: 5rem;
+  height: 4.5rem;
   padding: 1rem;
   z-index: 0;
+  cursor: pointer;
+  
+  top: 13rem;
+  left: 2.5rem;
+
+  transition: transform 0.2s;
+}
+
+.container .card:hover{
+  transform: scale(0.9);
+}
+
+.container button {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  background: none;
+  border: none;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.container form button {
+  left: 1rem;
+  width: 1.8rem;
+  height: 1.8rem;
 }
 
 .modal {
@@ -224,7 +260,7 @@ button img {
   width: 100%;
   max-width: 576px;
 
-  background: var(--background-light);
+  background: linear-gradient(45deg, var(--secondary), var(--secondary-hover));
 
   padding: 3rem;
   position: relative;

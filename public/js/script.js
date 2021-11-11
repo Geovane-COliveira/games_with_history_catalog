@@ -14,6 +14,6 @@ const onClose = () => {
   modal.style.display = "none";
 };
 
-addButton.addEventListener("click", () => onOpen());
+confirmDelete.addEventListener("click", () => onOpen());
 modalCloseButton.addEventListener("click", () => onClose());
 cancelDelete.addEventListener("click", () => onClose());

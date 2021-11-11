@@ -21,41 +21,74 @@
       <div class="bar"></div>
       <p>A list of games that have a really good history for you to play</p>
     </header>
+
     <main>
       <section class="controllers-container">
         <button><img src="/img/random-solid.svg" alt="random-solid" /></button>
-        <button>
-          <img src="/img/plus-solid.svg" alt="plus-solid" class="add-button" />
-        </button>
+        <form action="/create" method="get">
+          <button>
+            <img
+              src="/img/plus-solid.svg"
+              alt="plus-solid"
+              class="add-button"
+            />
+          </button>
+        </form>
       </section>
 
       <section class="content-container">
         <article class="container">
           <div class="outsideCircle">
             <div class="insideCircle">
-              <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/vfMNnYQdy8BISFLo0SVjO/e68ccb88e82ebb7e9233d23157ba7153/AC_Brotherhood.jpg.png" alt="ranger vermelho" />
+              <img
+                src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/vfMNnYQdy8BISFLo0SVjO/e68ccb88e82ebb7e9233d23157ba7153/AC_Brotherhood.jpg.png"
+                alt="ranger vermelho"
+              />
             </div>
           </div>
-          <div class="card">
-            <div class="cardTitle">
-              <h3>Assassin's Creed</h3>
-            </div>
-          </div>
-        </article>
-      </section>
 
-      <section class="modal">
-        <article class="modal-overlay">
-          <div class="modal-content">
-            <button class="modal-close">x</button>
-            <span>
-              <h2>Do you really want to delete this game?</h2>
-            </span>
-            <span class="hstack">
-              <button id="confirm-delete-button">Yes</button>
-              <button id="cancel-delete-button">No</button>
-            </span>
-          </div>
+          <form action="/edit" method="get">
+            <button type="submit">
+              <img
+                src="/img/edit-solid.svg"
+                alt="edit-solid"
+                id="edit-button"
+              />
+            </button>
+          </form>
+
+          <button>
+            <img
+              src="/img/trash-solid.svg"
+              alt="trash-solid"
+              id="delete-button"
+            />
+          </button>
+
+          <form action="/details" method="get">
+            <button class="card">
+     
+                <h3>Assassin's Creed</h3>
+    
+            </button>
+          </form>
+
+          <section class="modal">
+            <article class="modal-overlay">
+              <div class="modal-content">
+                <form action="" method="post">
+                  <button class="modal-close">x</button>
+                  <span>
+                    <h2>Do you really want to delete this game?</h2>
+                  </span>
+                  <span class="hstack">
+                    <button id="confirm-delete-button">Yes</button>
+                    <button id="cancel-delete-button">No</button>
+                  </span>
+                </form>
+              </div>
+            </article>
+          </section>
         </article>
       </section>
     </main>
