@@ -23,10 +23,43 @@
     </header>
     <main>
       <section class="controllers-container">
-        <button><img src="/img/random-solid.svg" alt="random-solid"></button>
-        <button><img src="/img/plus-solid.svg" alt="plus-solid"></button>
+        <button><img src="/img/random-solid.svg" alt="random-solid" /></button>
+        <button>
+          <img src="/img/plus-solid.svg" alt="plus-solid" class="add-button" />
+        </button>
+      </section>
+
+      <section class="content-container">
+        <article class="container">
+          <div class="outsideCircle">
+            <div class="insideCircle">
+              <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/vfMNnYQdy8BISFLo0SVjO/e68ccb88e82ebb7e9233d23157ba7153/AC_Brotherhood.jpg.png" alt="ranger vermelho" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="cardTitle">
+              <h3>Assassin's Creed</h3>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="modal">
+        <article class="modal-overlay">
+          <div class="modal-content">
+            <button class="modal-close">x</button>
+            <span>
+              <h2>Do you really want to delete this game?</h2>
+            </span>
+            <span class="hstack">
+              <button id="confirm-delete-button">Yes</button>
+              <button id="cancel-delete-button">No</button>
+            </span>
+          </div>
+        </article>
       </section>
     </main>
+
     <script src="/js/script.js"></script>
   </body>
 </html>
