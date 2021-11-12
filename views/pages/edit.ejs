@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="/css/edit.css" />
+  <title>Games With History - Edit</title>
+</head>
+
+<body>
+  <%- include('../partials/header'); %>
+  <main>
+    <% if(editMessage != "") { %>
+    <section id="message">
+      <p><%= editMessage %></p>
+      <span id="close">&times;</span>
+    </section>
+    <% } %>
+  </main>
+  <h1>Hello World</h1>
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

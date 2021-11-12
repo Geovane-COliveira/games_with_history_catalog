@@ -20,4 +20,5 @@ closeMessage.addEventListener("click", function () {
 
 setTimeout(() => {
   message.style.display = "none";
+  window.navigator.vibrate(500);
 }, 5000);

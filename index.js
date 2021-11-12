@@ -43,7 +43,7 @@ const findGameById = (id) => {
 };
 
 app.get("/", (req, res) => {
-  res.render("index", {games: treatedArray(), message});
+  res.render("pages/index", {games: treatedArray(), message});
 
   setTimeout(() => {
     isShuffled = false;
@@ -59,7 +59,7 @@ app.post("/shuffle", (req, res) => {
 app.get("/edit/:game_id", (req, res) => {
   const game = findGameById(req.params.game_id);
 
-  res.render("edit", game, editMessage);
+  res.render("pages/edit", {game, editMessage});
 
   setTimeout(() => {
     editMessage = "";
@@ -82,7 +82,7 @@ app.put("/edit/:game_id", (req, res) => {
 
 app.get("/details/:game_id", (req, res) => {
   const game = findGameById(req.params.game_id);
-  res.render("details", game);
+  res.render("pages/details", game);
 });
 
 app.post("/delete/:game_id", (req, res) => {
@@ -94,7 +94,7 @@ app.post("/delete/:game_id", (req, res) => {
 });
 
 app.get("/create", (req, res) => {
-  res.render("create");
+  res.render("pages/create");
 });
 
 app.post("/create", (req, res) => {
