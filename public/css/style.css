@@ -3,8 +3,8 @@
   --background-light: #424242;
   --primary: #512da8;
   --primary-hover: #311b92;
-  --secondary: #ff6f00;
-  --secondary-hover: #ff8f00;
+  --secondary: #f17611;
+  --secondary-hover: #f5af19;
   --text-light: #fafafa;
   --text-dark: #1b1b1b;
   --gradient-main: #0f0c29;
@@ -59,17 +59,18 @@ header {
   box-shadow: 2px 2px 6px var(--gradient-main);
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 400;
-  
+
   color: var(--text-light);
   text-shadow: 0 0 3px var(--gradient-main);
-  
+
   font-family: "Mochiy Pop P One", sans-serif;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: var(--secondary-hover);
   text-shadow: 2px 2px 2px var(--gradient-main);
-  
+
   margin-bottom: 0.5rem;
 }
 
@@ -145,10 +146,11 @@ button img {
   padding: 4rem;
 }
 
-.container{
+.container {
   width: 280px;
   height: 300px;
   padding: 0.5rem;
+  margin: 0 1rem;
 
   display: flex;
   align-items: center;
@@ -156,15 +158,16 @@ button img {
   flex-direction: column;
 
   border-radius: 1rem;
+  box-shadow: 2px 2px 5px var(--text-dark);
 
   position: relative;
   background: linear-gradient(45deg, var(--secondary), var(--secondary-hover));
 }
 
-.outsideCircle{
+.outsideCircle {
   width: 200px;
   height: 200px;
-  
+
   background: var(--primary);
   border: 5px solid var(--primary-hover);
   border-radius: 50%;
@@ -172,7 +175,7 @@ button img {
   position: relative;
 }
 
-.container .outsideCircle .insideCircle{
+.container .outsideCircle .insideCircle {
   width: 180px;
   height: 180px;
   background: transparent;
@@ -189,31 +192,29 @@ button img {
 }
 
 .container .outsideCircle .insideCircle img {
-  width: auto;
-  height: 100%;
-
-  border-radius: 50%;
+  width: inherit;
+  height: auto;
 }
 
-.container .card{
+.container .card {
   background: var(--primary-hover);
   border: 5px solid var(--primary);
-  
+
   border-radius: 20px;
-  
-  width: fit-content;
+
+  width: 250px;
   height: 4.5rem;
   padding: 1rem;
   z-index: 0;
   cursor: pointer;
-  
+  font-size: 0.8rem;
+
   top: 13rem;
-  left: 2.5rem;
 
   transition: transform 0.2s;
 }
 
-.container .card:hover{
+.container .card:hover {
   transform: scale(0.9);
 }
 
@@ -283,6 +284,35 @@ button img {
 
 .modal-close:hover {
   background: var(--secondary-hover);
+}
+
+section#message {
+  padding: 1.5rem;
+  background-color: var(--background-light);
+  color: var(--secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span#close {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+span#close:hover {
+  color: var(--primary);
+  transform: scale(1.5);
 }
 
 @media (max-width: 1080px) {

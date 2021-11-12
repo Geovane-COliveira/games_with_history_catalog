@@ -23,8 +23,17 @@
     </header>
 
     <main>
+      <% if(message != "") { %>
+        <section id="message">
+          <p><%= message %></p>
+          <span id="close">&times;</span>
+        </section>
+      <% } %>
+      
       <section class="controllers-container">
+        <form action="/shuffle" method="post">
         <button><img src="/img/random-solid.svg" alt="random-solid" /></button>
+      </form>
         <form action="/create" method="get">
           <button>
             <img
@@ -37,17 +46,18 @@
       </section>
 
       <section class="content-container">
-        <article class="container">
+        <% games.forEach( (game, index) => { %> 
+        <article key=<%=index%> class="container">
           <div class="outsideCircle">
             <div class="insideCircle">
               <img
-                src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/vfMNnYQdy8BISFLo0SVjO/e68ccb88e82ebb7e9233d23157ba7153/AC_Brotherhood.jpg.png"
-                alt="ranger vermelho"
+                src="<%= game.image_url %>"
+                alt=<%= game.name %> 
               />
             </div>
           </div>
 
-          <form action="/edit" method="get">
+          <form action="edit/<%= index%>"  method="get">
             <button type="submit">
               <img
                 src="/img/edit-solid.svg"
@@ -57,7 +67,7 @@
             </button>
           </form>
 
-          <button>
+          <button onclick="onOpen(<%= index%>)">
             <img
               src="/img/trash-solid.svg"
               alt="trash-solid"
@@ -65,31 +75,31 @@
             />
           </button>
 
-          <form action="/details" method="get">
+          <form action="/details/<%= index%>" method="get">
             <button class="card">
      
-                <h3>Assassin's Creed</h3>
+                <h3><%= game.name%></h3>
     
             </button>
           </form>
 
-          <section class="modal">
+          <section class="modal" id="modal-<%= index%>">
             <article class="modal-overlay">
               <div class="modal-content">
-                <form action="" method="post">
-                  <button class="modal-close">x</button>
                   <span>
                     <h2>Do you really want to delete this game?</h2>
                   </span>
                   <span class="hstack">
-                    <button id="confirm-delete-button">Yes</button>
-                    <button id="cancel-delete-button">No</button>
+                    <form action="/delete/<%= index%>" method="post">
+                      <button type="submit" id="confirm-delete-button">Yes</button>
+                    </form>
+                    <button onclick="onClose(<%= index%>)" id="cancel-delete-button">No</button>
                   </span>
-                </form>
               </div>
             </article>
           </section>
         </article>
+        <% }) %> 
       </section>
     </main>
 

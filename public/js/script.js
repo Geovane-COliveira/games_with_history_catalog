@@ -1,19 +1,23 @@
-const modal = document.querySelector(".modal");
-const modalCloseButton = document.querySelector(".modal-close");
 const addButton = document.querySelector(".add-button");
-const confirmDelete = document.getElementById("confirm-delete-button");
-const cancelDelete = document.getElementById("cancel-delete-button");
+const closeMessage = document.querySelector("#close");
+const message = document.querySelector("#message");
 
-const onOpen = () => {
+function onOpen(game) {
+  const modal = document.querySelector(`#modal-${game}`);
   isOpen = true;
   modal.style.display = "block";
 };
 
-const onClose = () => {
+const onClose = (game) => {
+  const modal = document.querySelector(`#modal-${game}`);
   isOpen = false;
   modal.style.display = "none";
 };
 
-confirmDelete.addEventListener("click", () => onOpen());
-modalCloseButton.addEventListener("click", () => onClose());
-cancelDelete.addEventListener("click", () => onClose());
+closeMessage.addEventListener("click", function () {
+  message.style.display = "none";
+});
+
+setTimeout(() => {
+  message.style.display = "none";
+}, 5000);
