@@ -75,7 +75,7 @@ $ git clone https://github.com/JulianePires/games_with_history_catalog
 $ cd games_with_history_catalog
 
 # Instale as dependências
-$ npm
+$ npm install
 
 # Para iniciar o projeto
 $ npm run dev
