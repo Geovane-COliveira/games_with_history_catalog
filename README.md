@@ -60,6 +60,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Node.js](https://nodejs.org/en/)
 - [Express.js](https://expressjs.com/pt-br/)
 - [EJS](https://ejs.co)
+- [Sequelize](https://sequelize.org/)
 
 ## :white_check_mark: Pré requisitos ##
 
