@@ -9,21 +9,25 @@
 
 <body>
   <%- include('../partials/header'); %>
+  <main>
   <section class="controllers-container">
-    <form action="/create" method="get">
+
+  
       <button>
         <img src="/img/return-button-svgrepo-com.svg" alt="plus-solid" class="add-button" />
       </button>
-      <title>Cadastro de Personagem</title>
+      </section>
+      <section class="form-container">
+        <form action="/create" method="get">
+          <title>Cadastro de Personagem</title>
 
       <h1>Cadastro de Personagens</h1>
-      <h3>Digite as informações do seu personagem</h3>
+      <h3>Habilidade do seu personagem</h3>
       <br>
-      <form>
         <fieldset>
           <div>
             <label>Nome:</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="name" id="nome">
           </div>
         </fieldset>
 
@@ -41,18 +45,20 @@
         </div>
 
         </fieldset>
-      </form>
+      
 
       <feldset>
         <div>
-          <label>Habilidades do personagem:</label>
-          <textarea row="6" style="width: 26em" id="Informações" name="informações"></textarea>
 
+<button id="create-button" type="submit">Enviar</button>
 
-          <button type="submit">Enviar</button>
 
         </div>
       </feldset>
+
+        </form>
+      </section>
+    </main>
       <script src="/js/script.js"></script>
 </body>
 

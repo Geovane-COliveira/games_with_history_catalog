@@ -27,15 +27,18 @@ const treatedArray = (arr) => {
   return newArr
 }
 
-const findGameById = async (id) => {
-  const games = await Game.findAll()
-  const game = games.find((game, index) => index == id)
+const findAll = async () => {
+  const games = await Game.findAll();
+  return games;
+}
 
-  return game
+const findGameById = async (id) => {
+  const game = await Game.findByPk(id);
+  return game;
 }
 
 app.get('/', async (req, res) => {
-  const games = await Game.findAll()
+  const games = findAll();
   res.render('pages/index', { games: treatedArray(games), message })
 
   setTimeout(() => {
