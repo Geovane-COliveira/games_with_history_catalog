@@ -64,7 +64,6 @@ app.get('/edit/:game_id', (req, res) => {
 })
 
 app.put('/edit/:game_id', (req, res) => {
-  try {
     const game = findGameById(req.params.game_id)
 
     game.name = req.body.name
@@ -72,9 +71,7 @@ app.put('/edit/:game_id', (req, res) => {
 
     editMessage = 'Game edited succesfully!'
     res.redirect('/edit')
-  } catch (err) {
-    console.log(err)
-  }
+ 
 })
 
 app.get('/details/:game_id', async (req, res) => {
@@ -102,15 +99,15 @@ app.get('/create', (req, res) => {
   res.render('pages/create')
 })
 
-app.post('/create', (req, res) => {
-  const { name, image_url } = req.body
+app.post('/create', async (req, res) => {
+  const { nome, imagem } = req.body
 
-  const newGame = {
-    name,
-    image_url,
-  }
+  await Game.create({
+    nome,
+    descricao: '',
+    imagem,
+  })
 
-  games.push(newGame)
   message = 'Game created succesfully!'
   res.redirect('/')
 })

@@ -1,15 +1,57 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 50vh;
+
+  margin: 2rem;
+}
+
 #create-button {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .form-container form {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: inherit;
+  width: 40%;
+  padding: 1rem;
+
+  background-color: var(--secondary);
+  border-radius: 1rem;
+}
+
+fieldset {
+  width: 90%;
+  padding: 0.5rem;
+
+  border-radius: 2rem;
+  border: none;
+  background: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 input {
-    width: 22rem;
-    height: 2rem;
+  width: 22rem;
+  height: 1.6rem;
+  padding-left: 0.5rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+input::-webkit-file-upload-button {
+  height: inherit;
+  background: var(--secondary-hover);
+  border: none;
+  color: var(--text-dark);
+  font-family: inherit;
+  cursor: pointer;
 }

@@ -12,37 +12,26 @@
   <main>
     <%- include('../partials/controllers', {variant: 'secondary'}); %>
     <section class="form-container">
-      <form action="/create" method="get">
-        <title>Cadastro de Personagem</title>
+      <form action="/create" method="post">
 
-        <h1>Cadastro de Personagens</h1>
-        <h3>Habilidade do seu personagem</h3>
-        <br>
+        <h1>Game Creation</h1>
+        <h3>Add your game here</h3>
+
         <fieldset>
-          <div>
-            <label>Nome:</label>
-            <input type="text" name="name" id="nome">
-          </div>
+          <label>Name:</label>
+          <input type="text" name="nome" id="name-input" placeholder="Game name" required>
         </fieldset>
 
         <fieldset>
-          <div>
-            <label>Imagem:</label>
-            <input type="file" name="imagem" id="imagem">
-          </div>
+          <label>Image:</label>
+          <input type=" url" name="imagem" id="image-input" placeholder="Image url" required>
         </fieldset>
-        <div>
-        </div>
-        </fieldset>
-        <feldset>
-          <div>
-            <button id="create-button" type="submit">Enviar</button>
-          </div>
-        </feldset>
+
+        <button id="create-button" type="submit">Send</button>
+
       </form>
     </section>
   </main>
   <script src="/js/script.js"></script>
 </body>
-
 </html>
