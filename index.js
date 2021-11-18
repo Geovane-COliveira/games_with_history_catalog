@@ -54,13 +54,17 @@ app.get('/edit/:game_id', (req, res) => {
 })
 
 app.put('/edit/:game_id', (req, res) => {
-    const game = await Game.findByPk(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id)
+    const {nome, descricao, imagem} = req.body;
+    
+  game.nome = nome; 
+  game.descricao = descricao;
+  game.imagem = imagem;
 
-    game.name = req.body.name
-    game.image_url = req.body.image_url
-
+  const editedGame = await game.save();
+    
     editMessage = 'Game edited succesfully!'
-    res.redirect('/edit')
+    res.render('pages/edit', { game: editedGame, editMessage })
  
 })
 
