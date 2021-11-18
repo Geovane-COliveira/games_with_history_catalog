@@ -1,0 +1,18 @@
+<section class="controllers-container">
+  <% if(variant == 'main'){ %>
+  <form action="/shuffle" method="post">
+    <button><img src="/img/random-solid.svg" alt="random-solid" /></button>
+  </form>
+  <form action="/create" method="get">
+    <button>
+      <img src="/img/plus-solid.svg" alt="plus-solid" class="add-button" />
+    </button>
+  </form>
+  <%}else{ %>
+  <form action="/" method="get">
+    <button>
+      <img src="/img/return-button-svgrepo-com.svg" alt="plus-solid" class="add-button" />
+    </button>
+  </form>
+  <%} %>
+</section>

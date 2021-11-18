@@ -10,20 +10,14 @@
 <body>
   <%- include('../partials/header'); %>
   <main>
-  <section class="controllers-container">
+    <%- include('../partials/controllers', {variant: 'secondary'}); %>
+    <section class="form-container">
+      <form action="/create" method="get">
+        <title>Cadastro de Personagem</title>
 
-  
-      <button>
-        <img src="/img/return-button-svgrepo-com.svg" alt="plus-solid" class="add-button" />
-      </button>
-      </section>
-      <section class="form-container">
-        <form action="/create" method="get">
-          <title>Cadastro de Personagem</title>
-
-      <h1>Cadastro de Personagens</h1>
-      <h3>Habilidade do seu personagem</h3>
-      <br>
+        <h1>Cadastro de Personagens</h1>
+        <h3>Habilidade do seu personagem</h3>
+        <br>
         <fieldset>
           <div>
             <label>Nome:</label>
@@ -34,33 +28,21 @@
         <fieldset>
           <div>
             <label>Imagem:</label>
-
-            <input type="imagem" name="imagem" id="imagem">
-
+            <input type="file" name="imagem" id="imagem">
           </div>
         </fieldset>
-
-
         <div>
-
         </div>
-
         </fieldset>
-      
-
-      <feldset>
-        <div>
-
-<button id="create-button" type="submit">Enviar</button>
-
-
-        </div>
-      </feldset>
-
-        </form>
-      </section>
-    </main>
-      <script src="/js/script.js"></script>
+        <feldset>
+          <div>
+            <button id="create-button" type="submit">Enviar</button>
+          </div>
+        </feldset>
+      </form>
+    </section>
+  </main>
+  <script src="/js/script.js"></script>
 </body>
 
 </html>
