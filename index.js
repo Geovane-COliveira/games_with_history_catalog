@@ -80,7 +80,7 @@ app.put('/edit/:game_id', (req, res) => {
 app.get('/details/:game_id', async (req, res) => {
   const game = await Game.findByPk(req.params.game_id)
  
-  res.render('pages/details', game)
+  res.render('pages/details', {game})
 })
 
 app.post('/delete/:game_id', (req, res) => {

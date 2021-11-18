@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-    <link rel="stylesheet" href="/css/details.css" />
-    <title>Games With History - Details</title>
-  </head>
-  <body>
-    <%- include('../partials/header'); %>
-    <main>
-      <%- include('../partials/controllers', {variant: 'secondary'}); %>
-      <section class="details-container">
-        <div class="image">
-          <img src="<%= game.imagem%>" alt=<%= game.nome%>>
-        </div>
-      </section>
-    </main>
-    <script src="/js/script.js"></script>
-  </body>
+
+<head>
+  <%- include('../partials/head'); %>
+  <link rel="stylesheet" href="/css/details.css" />
+  <title>Games With History - Details</title>
+</head>
+
+<body>
+  <%- include('../partials/header'); %>
+  <main>
+    <%- include('../partials/controllers', {variant: 'secondary'}); %>
+    <section class="details-container">
+      <div class="image-border">
+        <img src="<%= game.imagem%>" alt=<%= game.nome%>>
+        
+        <h3><%= game.nome%></h3>
+      </div>
+
+      <h2><%= game.descricao%></h2>
+
+    </section>
+  </main>
+  <script src="/js/script.js"></script>
+</body>
+
 </html>
