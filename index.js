@@ -27,18 +27,8 @@ const treatedArray = (arr) => {
   return newArr
 }
 
-const findAll = async () => {
-  const games = await Game.findAll()
-  return games
-}
-
-const findGameById = async (id) => {
-  const game = await Game.findByPk(id)
-  return game
-}
-
 app.get('/', async (req, res) => {
-  const games = await findAll()
+  const games = await Game.findAll()
 
   res.render('pages/index', { games: treatedArray(games), message })
 
@@ -54,7 +44,7 @@ app.post('/shuffle', (req, res) => {
 })
 
 app.get('/edit/:game_id', (req, res) => {
-  const game = findGameById(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id)
 
   res.render('pages/edit', { game, editMessage })
 
@@ -64,7 +54,7 @@ app.get('/edit/:game_id', (req, res) => {
 })
 
 app.put('/edit/:game_id', (req, res) => {
-    const game = findGameById(req.params.game_id)
+    const game = await Game.findByPk(req.params.game_id)
 
     game.name = req.body.name
     game.image_url = req.body.image_url
