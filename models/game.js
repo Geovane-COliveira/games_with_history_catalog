@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 const database = require('./../database')
-//TODO --> Ao conectar ao banco remoto, alterar para a tabela games_with_history
+
 const Game = database.define(
   'games',
   {
