@@ -7,7 +7,14 @@
   </head>
   <body>
     <%- include('../partials/header'); %>
-    <h1>Hello World</h1>
+    <main>
+      <%- include('../partials/controllers', {variant: 'secondary'}); %>
+      <section class="details-container">
+        <div class="image">
+          <img src="<%= game.imagem%>" alt=<%= game.nome%>>
+        </div>
+      </section>
+    </main>
     <script src="/js/script.js"></script>
   </body>
 </html>
