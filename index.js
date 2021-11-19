@@ -53,7 +53,7 @@ app.get('/edit/:game_id', async (req, res) => {
   }, 1000)
 })
 
-app.put('/edit/:game_id', async (req, res) => {
+app.post('/edit/:game_id', async (req, res) => {
   const game = await Game.findByPk(req.params.game_id)
   const { nome, descricao, imagem } = req.body;
 
