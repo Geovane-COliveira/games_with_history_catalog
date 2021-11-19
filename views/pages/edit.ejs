@@ -18,7 +18,30 @@
     <% } %>
     <%- include('../partials/controllers', {variant: 'secondary'}); %>
   </main>
-  <h1>Hello World</h1>
+  <h1>Game Description</h1>
+  <section class="form-container">
+    <form action="/edit/<%= game.id%>" method="put">
+
+      <h3>Edit your gamer</h3>
+      <br>
+
+      <fieldset>
+        <label>Name:</label>
+        <input type="text" name="name" id="name-input" placeholder="Name description" required>
+      </fieldset>
+      <br>
+       <fieldset>
+        <label>Description:</label>
+        <input type="text" name="nome" id="name-input" placeholder="Game description" required>
+      </fieldset>
+      <br>
+      <fieldset>
+        <label>Image:</label>
+        <input type="text" Image="nome" id="name-input" placeholder="Image description" required>
+      </fieldset>
+
+      <button id="create-button" type="submit">Send</button>
+      
   <script src="/js/script.js"></script>
 </body>
 
