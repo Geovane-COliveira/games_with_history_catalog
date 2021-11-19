@@ -17,31 +17,39 @@
     </section>
     <% } %>
     <%- include('../partials/controllers', {variant: 'secondary'}); %>
+
+
+    <section class="form-container">
+      <form action="/edit/<%= game.id%>" method="post">
+
+        <img src="<%= game.imagem%>" alt=<%= game.nome%>>
+
+        <h1>Game Edit</h1>
+        <h3>Change your game</h3>
+        <br>
+
+        <fieldset>
+          <label>Name:</label>
+          <input type="text" name="nome" id="name-input" placeholder="Game name" value="<%= game.nome%>" required>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <label>Description:</label>
+          <input type="text" name="descricao" id="name-input" placeholder="Game description" value="<%= game.descricao%>" required>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+          <label>Image:</label>
+          <input type="text" name="imagem" id="name-input" placeholder="Image url" value="<%= game.imagem%>" required>
+        </fieldset>
+
+        <button id="create-button" type="submit">Send</button>
+      </form>
   </main>
-  <h1>Game Description</h1>
-  <section class="form-container">
-    <form action="/edit/<%= game.id%>" method="put">
-
-      <h3>Edit your gamer</h3>
-      <br>
-
-      <fieldset>
-        <label>Name:</label>
-        <input type="text" name="name" id="name-input" placeholder="Name description" required>
-      </fieldset>
-      <br>
-       <fieldset>
-        <label>Description:</label>
-        <input type="text" name="nome" id="name-input" placeholder="Game description" required>
-      </fieldset>
-      <br>
-      <fieldset>
-        <label>Image:</label>
-        <input type="text" Image="nome" id="name-input" placeholder="Image description" required>
-      </fieldset>
-
-      <button id="create-button" type="submit">Send</button>
-      
   <script src="/js/script.js"></script>
 </body>
 

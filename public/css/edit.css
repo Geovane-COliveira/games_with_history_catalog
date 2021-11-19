@@ -1,67 +1,73 @@
 .form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    height: 50vh;
-  
-    margin: 2rem;
-  }
-  
-  #create-button {
-    margin: 1rem;
-  }
-  
-  .form-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-  
-    height: inherit;
-    width: 40%;
-    padding: 1rem;
-  
-    background-color: var(--secondary);
-    border-radius: 1rem;
-  }
-  
-  fieldset {
-    width: 90%;
-    padding: 0.5rem;
-  
-    border-radius: 2rem;
-    border: none;
-    background: var(--primary);
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  
-  input {
-    width: 22rem;
-    height: 1.6rem;
-    padding-left: 0.5rem;
-    border-radius: 2rem;
-    border: none;
-  }
-  
-  input::-webkit-file-upload-button {
-    height: inherit;
-    background: var(--secondary-hover);
-    border: none;
-    color: var(--text-dark);
-    font-family: inherit;
-    cursor: pointer;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  h1 {
-      display: ruby-base-container;
-      contain:content;
-      
-  }
+  min-height: 50vh;
 
-  h3 {
-      color: black;
-  }
+  margin: 2rem;
+}
+
+#create-button {
+  margin: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: inherit;
+  width: 40%;
+  padding: 1rem;
+
+  background-color: var(--secondary);
+  border-radius: 1rem;
+}
+
+fieldset {
+  width: 90%;
+  padding: 0.5rem;
+
+  border-radius: 2rem;
+  border: none;
+  background: var(--primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+input {
+  width: 22rem;
+  height: 1.6rem;
+  padding-left: 0.5rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+input::-webkit-file-upload-button {
+  height: inherit;
+  background: var(--secondary-hover);
+  border: none;
+  color: var(--text-dark);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1 {
+  display: ruby-base-container;
+  contain: content;
+}
+
+h3 {
+  color: black;
+}
+
+img {
+  max-width: 300px;
+  border-radius: 12px;
+
+  border: 2px solid var(--secondary-hover);
+}
