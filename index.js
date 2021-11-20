@@ -1,4 +1,3 @@
-const { throws } = require('assert')
 const express = require('express')
 const path = require('path')
 const app = express()
@@ -29,7 +28,9 @@ const treatedArray = (arr) => {
 }
 
 app.get('/', async (req, res) => {
-  const games = await Game.findAll()
+  const games = await Game.findAll().catch((e) => {
+    console.log(e)
+  })
 
   res.render('pages/index', { games: treatedArray(games), message })
 
@@ -45,7 +46,9 @@ app.post('/shuffle', (req, res) => {
 })
 
 app.get('/edit/:game_id', async (req, res) => {
-  const game = await Game.findByPk(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id).catch((e) => {
+    console.log(e)
+  })
 
   res.render('pages/edit', { game, editMessage })
 
@@ -55,27 +58,35 @@ app.get('/edit/:game_id', async (req, res) => {
 })
 
 app.post('/edit/:game_id', async (req, res) => {
-  const game = await Game.findByPk(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id).catch((e) => {
+    console.log(e)
+  })
   const { nome, descricao, imagem } = req.body
 
   game.nome = nome
   game.descricao = descricao
   game.imagem = imagem
 
-  const editedGame = await game.save()
+  const editedGame = await game.save().catch((e) => {
+    console.log(e)
+  })
 
   editMessage = 'Game edited succesfully!'
   res.render('pages/edit', { game: editedGame, editMessage })
 })
 
 app.get('/details/:game_id', async (req, res) => {
-  const game = await Game.findByPk(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id).catch((e) => {
+    console.log(e)
+  })
 
   res.render('pages/details', { game })
 })
 
 app.post('/delete/:game_id', async (req, res) => {
-  const game = await Game.findByPk(req.params.game_id)
+  const game = await Game.findByPk(req.params.game_id).catch((e) => {
+    console.log(e)
+  })
 
   if (!game) {
     res.render('/', {
