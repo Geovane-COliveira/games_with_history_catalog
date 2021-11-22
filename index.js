@@ -30,17 +30,23 @@ const treatedArray = (arr) => {
 app.get('/', async (req, res) => {
   const games = await Game.findAll()
 
-  res.render('pages/index', { games: treatedArray(games), message })
+  res.render('pages/index')
+
+})
+
+app.get("/home",async(req, res)=>{
+  const games = await Game.findAll()
+
+  res.render('pages/home', { games: treatedArray(games), message })
 
   setTimeout(() => {
     isShuffled = false
     message = ''
   }, 1000)
 })
-
 app.post('/shuffle', (req, res) => {
   isShuffled = true
-  res.redirect('/')
+  res.redirect('/home')
 })
 
 app.get('/edit/:game_id', async (req, res) => {
