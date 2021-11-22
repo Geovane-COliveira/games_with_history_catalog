@@ -3,69 +3,11 @@
 
 <head>
   <%- include('../partials/head'); %>
-  <title>Games With History - Home</title>
+  <title>Games With History</title>
 </head>
 
 <body>
   <%- include('../partials/header'); %>
-
-  <main>
-    <% if(message != "") { %>
-    <section id="message">
-      <p><%= message %></p>
-      <span id="close">&times;</span>
-    </section>
-    <% } %>
-
-    <%- include('../partials/controllers', {variant: 'main'}); %>
-
-    <section class="content-container">
-      <% games.forEach( (game) => { %>
-      <article key=<%=game.id%> class="container">
-        <div class="outsideCircle">
-          <div class="insideCircle">
-            <img src="<%= game.imagem %>" alt=<%= game.nome %> />
-          </div>
-        </div>
-
-        <form action="edit/<%= game.id%>" method="get">
-          <button type="submit">
-            <img src="/img/edit-solid.svg" alt="edit-solid" id="edit-button" />
-          </button>
-        </form>
-
-        <button onclick="onOpen(<%= game.id%>)">
-          <img src="/img/trash-solid.svg" alt="trash-solid" id="delete-button" />
-        </button>
-
-        <form action="/details/<%= game.id%>" method="get">
-          <button class="card">
-            <h3><%= game.nome%></h3>
-          </button>
-        </form>
-
-        <section class="modal" id="modal-<%= game.id%>">
-          <article class="modal-overlay">
-            <div class="modal-content">
-              <span>
-                <h2>Do you really want to delete this game?</h2>
-              </span>
-              <span class="hstack">
-                <form action="/delete/<%= game.id%>" method="post">
-                  <button type="submit" id="confirm-delete-button">Yes</button>
-                </form>
-                <button onclick="onClose(<%= game.id%>)" id="cancel-delete-button">No</button>
-              </span>
-            </div>
-          </article>
-        </section>
-
-      </article>
-      <% }) %>
-    </section>
-  </main>
-
   <script src="/js/script.js"></script>
 </body>
-
 </html>
