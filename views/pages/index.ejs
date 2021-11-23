@@ -13,6 +13,18 @@
 
     </section>
     <section class="about-container">
+      <h3>About us</h3>
+      <article>
+        <% creators.forEach( (creator)=>{%>
+        <div class="creators-card">
+          <img src="<%= creator.imagem%>" alt=<%= creator.nome %>>
+          <p class="creators-name"><%= creator.nome %></p>
+          <p class="creators-cargo"><%= creator.cargo %></p>
+
+
+        </div>
+        <%})%>
+      </article>
 
     </section>
   </main>
