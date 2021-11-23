@@ -15,6 +15,7 @@ let message = ''
 let isShuffled = false
 
 const Game = require('./models/game')
+const Creator = require('./models/creator')
 
 const treatedArray = (arr) => {
   const newArr = arr.slice()
@@ -28,9 +29,9 @@ const treatedArray = (arr) => {
 }
 
 app.get('/', async (req, res) => {
-  const games = await Game.findAll()
+  const creators = await Creator.findAll()
 
-  res.render('pages/index')
+  res.render('pages/index',{creators})
 
 })
 
